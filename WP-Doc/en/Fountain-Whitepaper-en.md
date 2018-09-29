@@ -1,5 +1,6 @@
 # Fountain-Whitepaper
 **A content ecosystem based on PoC**
+
 *Thanks Steem, a pioneer.*
 
 # Mission and vision
@@ -113,7 +114,7 @@ The author publishes the content, and the reader reads the content and generates
 
 The total number of times that user *i* votes in the statistical period (ie, one day) is ![](http://latex.codecogs.com/svg.latex?C_i), then the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)
 
-Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user i (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user *i* on the current day.
+Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user *i* (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user *i* on the current day.
 
 Unlike Steem, the content on Fountain can be always voted. This means that a novel ten years ago can still be voted and rewarded by users today.
 

@@ -1,4 +1,4 @@
-# Fountain-Whitepaper
+# Fountain Whitepaper V0.93en
 **A content ecosystem based on PoC**
 
 *Thanks Steem, a pioneer.*
@@ -100,7 +100,7 @@ We will encourage long-term holders of FTN because the long-term holding of FTN 
 
 In view of this, we designed FP (Fountain Power ). Users can convert FTN to FP at a 1:1 ratio at any time. However, when the user chooses to convert the FP to FTN, the total amount of the FTN is divided into 13 equal shares, one redeems per week, and the 13-week redemption is completed. FP cannot be circulated and must be redeemed for FTN before it can be circulated.
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-1-FTN2FP.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-1-FTN2FP.png"/></div>
 
 FP is Fountain's entitlement credit. Holding FP is like becoming a citizen of Fountain, fulfilling obligations for ecological prosperity and governance, while enjoying legitimate rights. FP is the core of the entire PoC operation. The design of the PoC mechanism is based on the principle of one FP one vote. The more users are holding the FP, the bigger the influence of the allocation of the PoC reward pool.
 
@@ -136,7 +136,7 @@ Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24) i
 ## Content reward distribution
 In general, moderate heat articles are the majority, the articles with particularly high heat and extremely low heat are relatively few, close to the Beta distribution, as shown below:
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-2-TailTrimming.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-2-TailTrimming.png"/></div>
 
 Here, the horizontal axis represents the heat value, and the vertical axis represents the number of articles. The heat average value of ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%241/e%24%24) or less (ie, the red part) is defined as the tail content. And adjust its weight:
 
@@ -173,7 +173,7 @@ The sponsors and judges involved in community governance and construction will a
 * Decommissioning: If the judgment is passed, the pledge target is released and returned; if not, it will be included in the community contributor quota pool.
 * Benefits: At the same time as the demolition, the sponsor will receive additional rewards from the pool of community contributors.
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-3-Proposal.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-3-Proposal.png"/></div>
 
 Since the number of participants per day and the amount of pledge are dynamically changing, and the amount of contributor quota pool is fixed, to solve this problem, we have designed the following mechanism:
 
@@ -203,7 +203,7 @@ For the above three methods, Fountain will be used to effectively resist the Syb
 # Development route
 Fountain's ecological architecture can be divided into four layers, namely the chain layer, industry protocol layer, community protocol layer and DApp:
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-4-Layers.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-4-Layers.png"/></div>
 
 Since Fountain's original intention is to use Token rewards to build a valuable content community, the overall design is mainly focused on the PoC mechanism. For the fastest testing and subsequent iteration of the PoC mechanism, the initial Fountain can be based on the existing mature public chain such as the Ethereum. Workshop or EOS for development. Fountain's development expectations are divided into three phases:
 
@@ -327,7 +327,7 @@ Although there are many doubts about the efficiency of decentralized governance,
 ## Architecture
 Fountain's ecological architecture can be divided into four layers, namely the chain layer, industry protocol layer, community protocol layer and DApp:
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-4-Layers.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-4-Layers.png"/></div>
 
 ## Chain layer
 The chain layer at the bottom of the whole system can be realized by subsequent development based on existing mature public chains such as Ethereum or EOS. When necessary, turn to Fountain's own public chain. The chain layer provides the basic functionality required for the entire Fountain and is the soil in which the Fountain can function.
@@ -345,7 +345,7 @@ The protocol layer is divided into two parts: industry agreement and community a
 ## DApp
 Each community has its own DApp that presents content from the community to users. It is the display and interaction interface of the entire ecology. The DApp can be an official version developed by the community itself, or it can be a private version developed by a third party. As long as the two sets of agreements between the industry and the community are followed, the relevant network services and smart contracts can be invoked. We can borrow the MVP architecture in the software architecture to express the relationship between the underlying chain, the two protocol layers, and each DApp:
 
-<div align="center"><img src="https://github.com/FountainHub/Fountain-Whitepaper/blob/master/WP-Graph/en/image-5-MVP.png"/></div>
+<div align="center"><img src="../../WP-Graph/en/image-5-MVP.png"/></div>
 
 ## Basic services
 At Fountain, there are some basic services that are used today and in all content industries, such as content chain storage, content addressing, chain KYC solutions, Markdown and rich text editor solutions.

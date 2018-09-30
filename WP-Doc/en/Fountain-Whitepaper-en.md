@@ -102,7 +102,7 @@ In view of this, we designed FP (Fountain Power ). Users can convert FTN to FP a
 
 <div align="center"><img src="../../WP-Graph/en/image-1-FTN2FP.png"/></div>
 
-FP is Fountain's entitlement credit. Holding FP is like becoming a citizen of Fountain, fulfilling obligations for ecological prosperity and governance, while enjoying legitimate rights. FP is the core of the entire PoC operation. The design of the PoC mechanism is based on the principle of one FP one vote. The more users are holding the FP, the bigger the influence of the allocation of the PoC reward pool.
+FP is Fountain's entitlement credit. Holding FP is like becoming a citizen of Fountain, fulfilling obligations for ecological prosperity and governance, while enjoying legitimate rights. FP is the core of the entire PoC operation. The design of the PoC mechanism is based on the principle of **one FP one vote**. The more users are holding the FP, the bigger the influence of the allocation of the PoC reward pool.
 
 Because the active vote of users holding FP is the guarantee of the entire ecological operation, 15% of the annual increase will be awarded to FP holders, and users are encouraged to convert FTN into FP to participate in the voting. The rewards that each FP holder receives are determined by the proportion of FP they hold to the total amount of FP held by all users.
 

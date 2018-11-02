@@ -11,11 +11,13 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
     - [简体中文版本](./WP-Doc/zh-cn/DAO-Creator-Manifesto-cn.md)
 
 ## Current Version
-- V0.94
+- V0.95
 
 ### Changlog
+- V0.95
+  - Detailed initial allocation lock period
 - V0.94
   - Split appendixes to separate files
   - Minor text adjustment
 - V0.93
-  - initial release
+  - Initial release

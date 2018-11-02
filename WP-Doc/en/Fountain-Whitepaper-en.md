@@ -1,4 +1,4 @@
-# Fountain Whitepaper V0.94en
+# Fountain Whitepaper V0.95en
 **A content ecosystem based on PoC**
 
 *Thanks Steem, a pioneer.*
@@ -73,10 +73,11 @@ Of these, 1.5 billion will be used as foundation reserves, which will be used fo
 
 | **Usage**   | **Qty (Billion)**   | **Percentage**   | **Lock period**   | 
 |:----|:----|:----|:----|
-| Community support plan   | 10   | 33%   | 6+12 months (unlocked after 6 months of the first round of delivery, linearly unlocking every day for 1 year)   | 
-| Foundation   | 15   | 50%   | 12+48 months (300 million initial unlocks, the remaining 1.2 billion unlocked after 12 months of the first round of delivery, linearly unlocking every day for 4 years   | 
-| Partner   | 5   | 17%   | 12+24 months (unlock after 12 months of the first round of delivery, linearly unlock every day for 2 years)   | 
-| Total   | 30   | 100%   |    | 
+| Community support plan   | 10   | 33%   | Early supporters：Start unlocking at 0:00 on April 16, 2019, completely unlocked at 0:00 on April 15, 2020. Linearly unlocked per day (during 365 days).*   | 
+| Foundation   | 15   | 50%   | Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2023. Linearly unlocked per day (during 1460 days).*   | 
+| Partner   | 5   | 17%   | Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2021. Linearly unlocked per day (during 730 days).*   | 
+| Total   | 30   | 100%   | *: All the moments are calculated in Coordinated Universal Time (UTC+0)    | 
+
 
 ## Additional allocation
 Based on the essential characteristics of the content community. Users continue to create new and valuable content to share with all users so that the value of the community as a whole is growing, so we believe that the complete deflation or constant total Token economy does not apply in such a fast-growing community that encourages content production and consumption. We will issue 1 million additional FTNs per day for eco-incentives. The first-year increase rate is about 12%, and then it will decrease year by year, approaching zero eventually.

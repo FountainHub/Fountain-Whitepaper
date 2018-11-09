@@ -1,4 +1,4 @@
-# Fountain Whitepaper V0.95cn
+# Fountain Whitepaper V0.96cn
 **A content ecosystem based on PoC.**
 
 *感谢 Steem，一位先行者。*
@@ -67,7 +67,7 @@ FTN 初始总量为30亿。
 | 用途   | 数量（亿）   | 百分比   | 锁定期   | 
 |:----|:----|:----|:----|
 | 社区支持计划   | 10   | 33%   | 早期支持者：2019年4月16日 0:00 开始解锁，  2020年4月15日 0:00 解锁完成，  期间（365 自然日）逐日线性解锁*   | 
-| 基金会   | 15   | 50%   | 2019年10月16日 0:00 开始解锁，  2023年10月15日 0:00 解锁完成，  期间（1460 自然日）逐日线性解锁*   | 
+| 基金会   | 15   | 50%   | 初始解锁3亿FTN，剩余12亿FTN 2019年10月16日 0:00 开始解锁，  2023年10月15日 0:00 解锁完成，  期间（1460 自然日）逐日线性解锁*   | 
 | 合作伙伴   | 5   | 17%   | 2019年10月16日 0:00 开始解锁，  2021年10月15日 0:00 解锁完成，  期间（730 自然日）逐日线性解锁*   | 
 | 合计   | 30   | 100%   | *: 所有时刻均以协调世界时（UTC+0）计算   | 
 
@@ -102,7 +102,7 @@ FP 是 Fountain 的权利凭证。持有 FP 就像是成为了 Fountain 的公�
 ## 投票权重
 作者发表内容，读者阅读内容并产生比如点赞或点踩的投票行为，而每一位读者持有的FP不同，产生的投票权重也就不同。
 
-我们取统计周期（即一天）内用户i进行投票的总次数为![](http://latex.codecogs.com/svg.latex?C_i)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i) 其中![](http://latex.codecogs.com/svg.latex?FP_i)是用户 i 所拥有的 FP 总数（如果在一天内用户的 FP 数发生变化，则以最后的FP数为准）；D 是准备金；![](http://latex.codecogs.com/svg.latex?C_i)是用户 i 当日所有投票次数。
+我们会设定一个阈值n，并统计周期（即一天）内用户i进行投票的总次数 ![](https://latex.codecogs.com/svg.latex?n)。如果 ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n)；如果 ![](https://latex.codecogs.com/svg.latex?C_i%3En)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)。其中 ![](http://latex.codecogs.com/svg.latex?FP_i)是用户 i 所拥有的 FP 总数（如果在一天内用户的 FP 数发生变化，则以最后的FP数为准）；![](http://latex.codecogs.com/svg.latex?D) 是准备金；![](http://latex.codecogs.com/svg.latex?C_i) 是用户 i 当日所有投票次数，![](https://latex.codecogs.com/svg.latex?n)是阈值。
 
 与 Steem 不同的是，Fountain 上的内容是可以被永远投票的。这意味着一篇十年前的小说，在今天依然可以被用户投票，并得到奖励。
 ## 内容热度值
@@ -118,7 +118,7 @@ FP 是 Fountain 的权利凭证。持有 FP 就像是成为了 Fountain 的公�
 
 <div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24H%20%3D%20A%20+%20%5Calpha%20%5Csum_%7Bi%7DA_%7Bi%7D%24%24"/></div>
 
-其中![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24)是内容本身的投票热度值，而后面的求和部分是对子评论的投票热度值进行求和。![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24)是子评论的权重参数，目前拟定为0.5。
+其中![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24)是内容本身的投票热度值，而后面的求和部分是对子评论的投票热度值进行求和。![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24)是子评论的权重参数，目前拟定为0。
 ## 内容奖励分配
 由于一般情况下，中等热度的文章居多，热度特别高和热度特别低的文章都相对较少，接近 Beta 分布，如下图：
 

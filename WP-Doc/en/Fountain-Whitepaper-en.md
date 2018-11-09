@@ -1,4 +1,4 @@
-# Fountain Whitepaper V0.95en
+# Fountain Whitepaper V0.96en
 **A content ecosystem based on PoC**
 
 *Thanks Steem, a pioneer.*
@@ -73,10 +73,10 @@ Of these, 1.5 billion will be used as foundation reserves, which will be used fo
 
 | **Usage**   | **Qty (Billion)**   | **Percentage**   | **Lock period**   | 
 |:----|:----|:----|:----|
-| Community support plan   | 10   | 33%   | Early supporters：Start unlocking at 0:00 on April 16, 2019, completely unlocked at 0:00 on April 15, 2020. Linearly unlocked per day (during 365 days).*   | 
-| Foundation   | 15   | 50%   | Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2023. Linearly unlocked per day (during 1460 days).*   | 
-| Partner   | 5   | 17%   | Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2021. Linearly unlocked per day (during 730 days).*   | 
-| Total   | 30   | 100%   | *: All the moments are calculated in Coordinated Universal Time (UTC+0)    | 
+| Community support plan   | 1   | 33%   | Early supporters：Start unlocking at 0:00 on April 16, 2019, completely unlocked at 0:00 on April 15, 2020. Linearly unlocked per day (during 365 days).*   | 
+| Foundation   | 1.5   | 50%   | Initially unlock 300 million FTN. Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2023. Linearly unlocked per day (during 1460 days).*   | 
+| Partner   | 0.5   | 17%   | Start unlocking at 0:00 on October 16, 2019, completely unlocked at 0:00 on October 15, 2021. Linearly unlocked per day (during 730 days).*   | 
+| Total   | 3   | 100%   | *: All the moments are calculated in Coordinated Universal Time (UTC+0)    | 
 
 
 ## Additional allocation
@@ -115,7 +115,9 @@ The author publishes the content, and the reader reads the content and generates
 
 The total number of times that user *i* votes in the statistical period (ie, one day) is ![](http://latex.codecogs.com/svg.latex?C_i), then the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)
 
-Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user *i* (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user *i* on the current day.
+We will set a threshold value ![](https://latex.codecogs.com/svg.latex?n). The total number of times that user i votes in the statistical period (ie, one day) is ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n); if ![](https://latex.codecogs.com/svg.latex?C_i%3En), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i).
+
+Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user *i* (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user i on the current day, ![](https://latex.codecogs.com/svg.latex?n) is the threshold value.
 
 Unlike Steem, the content on Fountain can be always voted. This means that a novel ten years ago can still be voted and rewarded by users today.
 
@@ -132,7 +134,8 @@ We think that comments are content, and the heat of article comments is a reflec
 
 <div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24H%20%3D%20A%20+%20%5Calpha%20%5Csum_%7Bi%7DA_%7Bi%7D%24%24"/></div>
 
-Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24) is the voting heat value of the content itself, and the subsequent summation part is to sum the voting heat values of the sub-comments. ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24) is the weight parameter of the sub-review which is currently set to 0.5.
+Where  is the voting heat value of the content itself, and the subsequent summation part is to sum the voting heat values of the sub-comments.  is the weight parameter of the sub-review which is currently set to 0.5.
+Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24) is the voting heat value of the content itself, and the subsequent summation part is to sum the voting heat values of the sub-comments. ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24) is the weight parameter of the sub-review which is currently set to 0.
 
 ## Content reward distribution
 In general, moderate heat articles are the majority, the articles with particularly high heat and extremely low heat are relatively few, close to the Beta distribution, as shown below:

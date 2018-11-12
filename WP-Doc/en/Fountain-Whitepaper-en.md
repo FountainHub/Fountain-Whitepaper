@@ -113,9 +113,7 @@ Content is the most critical value in the Fountain, and the author of the conten
 ## Voting weight
 The author publishes the content, and the reader reads the content and generates voting behaviors such as likes or dislikes, and each reader holds a different FP, and the voting weight is different.
 
-The total number of times that user *i* votes in the statistical period (ie, one day) is ![](http://latex.codecogs.com/svg.latex?C_i), then the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)
-
-We will set a threshold value ![](https://latex.codecogs.com/svg.latex?n). The total number of times that user i votes in the statistical period (ie, one day) is ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n); if ![](https://latex.codecogs.com/svg.latex?C_i%3En), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i).
+We will set a threshold value ![](https://latex.codecogs.com/svg.latex?n). The total number of times that user i votes in the statistical period (ie, one day) is ![](https://latex.codecogs.com/svg.latex?C_i). If ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n); if ![](https://latex.codecogs.com/svg.latex?C_i%3En), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i).
 
 Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user *i* (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user i on the current day, ![](https://latex.codecogs.com/svg.latex?n) is the threshold value.
 

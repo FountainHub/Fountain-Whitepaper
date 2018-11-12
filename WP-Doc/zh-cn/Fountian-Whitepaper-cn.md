@@ -102,7 +102,7 @@ FP 是 Fountain 的权利凭证。持有 FP 就像是成为了 Fountain 的公�
 ## 投票权重
 作者发表内容，读者阅读内容并产生比如点赞或点踩的投票行为，而每一位读者持有的FP不同，产生的投票权重也就不同。
 
-我们会设定一个阈值n，并统计周期（即一天）内用户i进行投票的总次数 ![](https://latex.codecogs.com/svg.latex?n)。如果 ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n)；如果 ![](https://latex.codecogs.com/svg.latex?C_i%3En)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)。其中 ![](http://latex.codecogs.com/svg.latex?FP_i)是用户 i 所拥有的 FP 总数（如果在一天内用户的 FP 数发生变化，则以最后的FP数为准）；![](http://latex.codecogs.com/svg.latex?D) 是准备金；![](http://latex.codecogs.com/svg.latex?C_i) 是用户 i 当日所有投票次数，![](https://latex.codecogs.com/svg.latex?n)是阈值。
+我们会设定一个阈值n，并统计周期（即一天）内用户i进行投票的总次数 ![](https://latex.codecogs.com/svg.latex?C_i)。如果 ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n)；如果 ![](https://latex.codecogs.com/svg.latex?C_i%3En)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)。其中 ![](http://latex.codecogs.com/svg.latex?FP_i)是用户 i 所拥有的 FP 总数（如果在一天内用户的 FP 数发生变化，则以最后的FP数为准）；![](http://latex.codecogs.com/svg.latex?D) 是准备金；![](http://latex.codecogs.com/svg.latex?C_i) 是用户 i 当日所有投票次数，![](https://latex.codecogs.com/svg.latex?n)是阈值。
 
 与 Steem 不同的是，Fountain 上的内容是可以被永远投票的。这意味着一篇十年前的小说，在今天依然可以被用户投票，并得到奖励。
 ## 内容热度值

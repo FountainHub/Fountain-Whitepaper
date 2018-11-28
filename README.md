@@ -14,9 +14,6 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
 - V0.96
 
 ### Changlog
-- [Unreleased] - 2018-11-28
-  - Add: FP loan
-  - Change: The heat average value will be divided by 128 to define the tail content
 - V0.96
   - Numerical correction
   - Fix typo in lock period
@@ -27,3 +24,6 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
   - Minor text adjustment
 - V0.93
   - Initial release
+
+## Testing Version
+- Click to [view the changes in the current test environment (on Jianshu)](https://github.com/FountainHub/Fountain-Whitepaper/tree/PoC-Testing)

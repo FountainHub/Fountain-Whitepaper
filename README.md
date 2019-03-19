@@ -10,9 +10,6 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
 - DAO Creator Manifesto/DAO创作者宣言
     - [简体中文版本](./WP-Doc/zh-cn/DAO-Creator-Manifesto-cn.md)
 
-## Current Version on Jianshu Testing
-- V0.97-dev181128
-
 ### Changlog
 - V0.97
   - Adjust some parameters according to test feedback

@@ -1,4 +1,4 @@
-# Fountain Whitepaper V0.96en
+# Fountain Whitepaper V0.97en
 **A content ecosystem based on PoC**
 
 *Thanks Steem, a pioneer.*
@@ -113,18 +113,18 @@ Content is the most critical value in the Fountain, and the author of the conten
 ## Voting weight
 The author publishes the content, and the reader reads the content and generates voting behaviors such as likes or dislikes, and each reader holds a different FP, and the voting weight is different.
 
-We will set a threshold value ![](https://latex.codecogs.com/svg.latex?n). The total number of times that user i votes in the statistical period (ie, one day) is ![](https://latex.codecogs.com/svg.latex?C_i). If ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n); if ![](https://latex.codecogs.com/svg.latex?C_i%3En), the weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i).
+There is a close interval *[m,n]*, in which the voter *i* could set his voting conefficient ![](https://latex.codecogs.com/svg.latex?C_i). The weight assigned to each click or point is: ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i).
 
-Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by user *i* (if the number of FPs in the user changes within one day, the last FP number is used); ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the number of votes for user i on the current day, ![](https://latex.codecogs.com/svg.latex?n) is the threshold value.
+Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs owned by voter *i*; ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24D%24%24) is the reserve; ![](http://latex.codecogs.com/svg.latex?C_i) is the voting coefficient.
 
 Unlike Steem, the content on Fountain can be always voted. This means that a novel ten years ago can still be voted and rewarded by users today.
 
 ## Content heat
 After calculating the weight of each vote, we can calculate the heat value of the content based on the reader's vote for each content. We believe that whether it got likes or dislikes, it only represents the values of different users, and there is no right or wrong in itself, so it should be regarded as voting.
 
-See Content heat value calculation method below:
+See content heat value calculation method below:
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24A%20%3D%20like+dislike%24%24%20%5C%5C%20%5C%5C%24%24like%20%3D%20%5Csum_%7Bi%5Cin%20Likers%7DW_%7Bi%7D%24%24%20%5C%5C%24%24dislike%20%3D%20%5Csum_%7Bi%5Cin%20Dislikers%7DW_%7Bi%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%5Cbegin%7Balign*%7D%20A%20%26%3D%20%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blr%7D%20like-dislike%20%2C%26%20like%5Cgeq%20dislike%5C%5C%200%20%2C%26%20like%3C%20dislike%20%5Cend%7Barray%7D%5Cright.%5C%5C%20like%20%26%3D%20%5Csum_%7Bi%5Cin%20Likers%7DW_i%5C%5C%20dislike%20%26%3D%20%5Csum_%7Bi%5Cin%20Dislikers%7DW_i%20%5Cend%7Balign*%7D"/></div>
 
 Here ![](http://latex.codecogs.com/svg.latex?W_i) is the voting weight of the user *i* who likes or clicks, ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24like%24%24) is the sum of the voting weights of all the people who like, and ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24dislike%24%24) is the sum of the voting weights of all the people who step on.
 
@@ -132,35 +132,29 @@ We think that comments are content, and the heat of article comments is a reflec
 
 <div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24H%20%3D%20A%20+%20%5Calpha%20%5Csum_%7Bi%7DA_%7Bi%7D%24%24"/></div>
 
-Where  is the voting heat value of the content itself, and the subsequent summation part is to sum the voting heat values of the sub-comments.  is the weight parameter of the sub-review which is currently set to 0.5.
 Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24) is the voting heat value of the content itself, and the subsequent summation part is to sum the voting heat values of the sub-comments. ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24) is the weight parameter of the sub-review which is currently set to 0.
 
 ## Content reward distribution
-In general, moderate heat articles are the majority, the articles with particularly high heat and extremely low heat are relatively few, close to the Beta distribution, as shown below:
+We sort The tail content from high to low according to the heat value. According to Ziff's law, each article will get an assigned value:
+the article rank first get 1, rank second get 1/2 ... rank n get 1/n.
 
-<div align="center"><img src="../../WP-Graph/en/image-2-TailTrimming.png"/></div>
+According to the rules mentioned above, the assigned value of an article now is:
 
-Here, the horizontal axis represents the heat value, and the vertical axis represents the number of articles. The heat average value of ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%241/e%24%24) or less (ie, the red part) is defined as the tail content. And adjust its weight:
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20V_i%3D1/i"/></div>
 
-We sort The tail content from high to low according to the heat value. According to Ziff's law, the maximum heat value in the tail content is divided by the sorting number as the new weight. This minimizes the weight of the tail's irrigation content while retaining a certain amount of revenue.
+Where i is the rank of the article. The final income distribution formula is:
 
-According to the rules mentioned above, the weight of an article now is:
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20R_i%3DT%5Ctimes%20%5Cfrac%7BV_i%7D%7B%5Csum%20V_i%7D"/></div>
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24Q_i%20%3D%20%5Cbegin%7Bcases%7D%20H_i%20%26%20%5Cquad%20%5Ctext%7BTop%20Contents%7D%20%5C%5C%20H_T/I_i%20%26%20%5Cquad%20%5Ctext%7BTail%20Contents%7D%20%5Cend%7Bcases%7D%20%24%24"/></div>
+Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24R_i%24%24) is the reward for an article, ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24T%24%24) is the total number of FPs to be allocated, and ![]![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%5Csum%7BV_i%7D%24) is the sum of the assigned value of all content on the day.
 
-Where ![](http://latex.codecogs.com/svg.latex?H_i) is the heat value of the content, ![](http://latex.codecogs.com/svg.latex?H_T) is the maximum heat value of the tail, and ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20I_i) is the sorting number of the tail content. The final income distribution formula is:
+After the content revenue is determined, it will be redistributed among the author and the voter of the content, and the distribution ratio is 75% for the author and 25% for the voter. So the rewards the author gets are:
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24R_i%3DT%5Ctimes%20%5Cfrac%7BQ_i%7D%7B%5Csum%20Q_i%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20r_%7Bwriter%7D%3D0.75%5Ctimes%20R_i"/></div>
 
-Where ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24R_i%24%24) is the reward for an article, ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24T%24%24) is the total number of FPs to be allocated, and ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%5Csum%7BQ_i%7D%24) is the sum of the weight distribution weights of all content on the day.
+The reward belonging to the voters will only be distributed to the likers. If the voting weight of the article form the liker j is ![](http://latex.codecogs.com/svg.latex?W_j), the reward the likers and the dislikers get are:
 
-After the content revenue is determined, it will be redistributed among the author and the voter of the content, and the distribution ratio is 80% for the author and 20% for the voter. So the rewards the author gets are:
-
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24r_%7Bwriter%7D%3D0.8%5Ctimes%20R_i%24%24"/></div>
-
-According to the voting weight of each voter, the proportion of the total voting weight of each content is equal to the reward obtained by assigning 20% of the articles or comments belonging to the voter:
-
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24r_%7Bvoter%7D%3D0.2%5Ctimes%20R_i%5Cfrac%7BW_j%7D%7B%5Csum%20W_j%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20%5Cbegin%7Baligned%7D%20r_%7Bliker%7D%26%3D0.25%5Ctimes%20R_i%5Cfrac%7BW_j%7D%7B%5Csum%20W_j%7D%5C%5C%20r_%7Bdisliker%7D%26%3D0%20%5Cend%7Baligned%7D"/></div>
 
 ## Operational contribution
 In addition to content contributions, operational-based contributions are also significant. We include community contribution contributions and introduction and promotion contributions that have fundamental values in the application and operation of the content community and are included in the rewards. 15% of the additional annual FTN will be used as a reward pool for this part.
@@ -253,3 +247,4 @@ Participants interested in Fountain and/or FTN should read this section carefull
 1. [Appendix 1: Partner Expansion Direction](./Appendixes/Appendix-1-Partner-Expansion-Direction-en.md)
 2. [Appendix 2: Draft Community Governance](./Appendixes/Appendix-2-Community-Governance-en.md)
 3. [Appendix 3: Technical Solution](./Appendixes/Appendix-3-Technical-Solution-en.md)
+3. [Appendix 4: FP Loan](./Appendixes/Appendix-4-FP-Loan-cn.md)

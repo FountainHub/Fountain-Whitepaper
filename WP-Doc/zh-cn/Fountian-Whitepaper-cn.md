@@ -1,4 +1,4 @@
-# Fountain Whitepaper V0.96cn
+# Fountain Whitepaper V0.97cn
 **A content ecosystem based on PoC.**
 
 *感谢 Steem，一位先行者。*
@@ -102,49 +102,45 @@ FP 是 Fountain 的权利凭证。持有 FP 就像是成为了 Fountain 的公�
 ## 投票权重
 作者发表内容，读者阅读内容并产生比如点赞或点踩的投票行为，而每一位读者持有的FP不同，产生的投票权重也就不同。
 
-我们会设定一个阈值n，并统计周期（即一天）内用户i进行投票的总次数 ![](https://latex.codecogs.com/svg.latex?C_i)。如果 ![](https://latex.codecogs.com/svg.latex?C_i%20%5Cleq%20n)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/n)；如果 ![](https://latex.codecogs.com/svg.latex?C_i%3En)，那么分配到每一次点赞或点踩上的权重为：![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)。其中 ![](http://latex.codecogs.com/svg.latex?FP_i)是用户 i 所拥有的 FP 总数（如果在一天内用户的 FP 数发生变化，则以最后的FP数为准）；![](http://latex.codecogs.com/svg.latex?D) 是准备金；![](http://latex.codecogs.com/svg.latex?C_i) 是用户 i 当日所有投票次数，![](https://latex.codecogs.com/svg.latex?n)是阈值。
+我们会设定一个区间[m,n]，投票人 i 可以在区间内设定自己的投票系数 ![](https://latex.codecogs.com/svg.latex?C_i)。投票人每一次点赞或者点踩的权重为 ![](http://latex.codecogs.com/svg.latex?W_i%3D%28FP_i-D%29/C_i)。其中 ![](http://latex.codecogs.com/svg.latex?FP_i)是计算PoC收益时投票人 i 所拥有的 FP 总数；![](http://latex.codecogs.com/svg.latex?D) 是准备金；![](http://latex.codecogs.com/svg.latex?C_i) 是投票人 i 的投票系数。
 
 与 Steem 不同的是，Fountain 上的内容是可以被永远投票的。这意味着一篇十年前的小说，在今天依然可以被用户投票，并得到奖励。
 ## 内容热度值
-在计算出每次投票的权重后，我们便可根据读者们为每篇内容投票的情况，计算出内容的热度值。我们认为无论是赞还是踩，只是代表了不同用户的价值观，本身并没有对错，因此都应当被视作投票行为。
+在计算出每次投票的权重后，我们便可根据读者们为每篇内容投票的情况，计算出内容的热度值。对内容点赞将提高内容热度值，反之，对内容点踩将降低内容热度值。
 
-内容热度值计算方式：
+内容热度值A的计算方式为：
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24A%20%3D%20like+dislike%24%24%20%5C%5C%20%5C%5C%24%24like%20%3D%20%5Csum_%7Bi%5Cin%20Likers%7DW_%7Bi%7D%24%24%20%5C%5C%24%24dislike%20%3D%20%5Csum_%7Bi%5Cin%20Dislikers%7DW_%7Bi%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%5Cbegin%7Balign*%7D%20A%20%26%3D%20%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blr%7D%20like-dislike%20%2C%26%20like%5Cgeq%20dislike%5C%5C%200%20%2C%26%20like%3C%20dislike%20%5Cend%7Barray%7D%5Cright.%5C%5C%20like%20%26%3D%20%5Csum_%7Bi%5Cin%20Likers%7DW_i%5C%5C%20dislike%20%26%3D%20%5Csum_%7Bi%5Cin%20Dislikers%7DW_i%20%5Cend%7Balign*%7D"/></div>
+
 
 这里 ![](http://latex.codecogs.com/svg.latex?W_i)是进行点赞或点踩的用户 i 的投票权重， ![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24like%24%24) 是所有点赞的人的投票权重的总和，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24dislike%24%24) 是所有点踩的人的投票权重的总和。
 
 我们认为评论即内容，同时文章评论的热度又是文章热度的一种体现。所以每篇内容的最终热度值将加入子评论的投票热度值进行计算：
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24H%20%3D%20A%20+%20%5Calpha%20%5Csum_%7Bi%7DA_%7Bi%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20H%3DA&plus;%5Calpha%20%5Csum_%7Bi%7D%20A_i"/></div>
 
 其中![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24A%24%24)是内容本身的投票热度值，而后面的求和部分是对子评论的投票热度值进行求和。![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24%5Calpha%24%24)是子评论的权重参数，目前拟定为0。
 ## 内容奖励分配
-由于一般情况下，中等热度的文章居多，热度特别高和热度特别低的文章都相对较少，接近 Beta 分布，如下图：
 
-<div align="center"><img src="../../WP-Graph/zh-cn/image-2-TailTrimming.png"/></div>
- 
-这里横轴代表热度值，纵轴代表文章数。将热度平均值 1/e 以下（即红色部分）定义为尾部内容。并对其权重进行调整：
+将所有文章根据热度值从高到底排序，根据齐夫定律，每篇文章都将获得一个分配值：排名第一的文章分配值为1，排名第二的文章分配值为1/2，排名第三的文章分配值为1/3……排名第n的文章分配值为1/n。
 
-将尾部内容根据热度值从高到底排序，根据齐夫定律 ，取尾部内容中的最大热度值除以排序序号，作为新的权重。这样可以最大限度地降低尾部的灌水内容所占权重，同时保留一定的收益。
+根据上面所说的规则，现在一篇热度值排名为i的内容，其分配值为：
 
-根据上面所说的规则，现在一篇内容的权重为：
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20V_i%3D1/i"/></div>
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Clarge%20%24%24Q_i%20%3D%20%5Cbegin%7Bcases%7D%20H_i%20%26%20%5Cquad%20%5Ctext%7BTop%20Contents%7D%20%5C%5C%20H_T/I_i%20%26%20%5Cquad%20%5Ctext%7BTail%20Contents%7D%20%5Cend%7Bcases%7D%20%24%24"/></div>
+最终的收益分配公式为：
 
-其中![](http://latex.codecogs.com/svg.latex?H_i)是内容的热度值，![](http://latex.codecogs.com/svg.latex?H_T)是尾部最大热度值，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20I_i)是尾部内容排序序号。最终的收益分配公式为：
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20R_i%3DT%5Ctimes%20%5Cfrac%7BV_i%7D%7B%5Csum%20V_i%7D"/></div>
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24R_i%3DT%5Ctimes%20%5Cfrac%7BQ_i%7D%7B%5Csum%20Q_i%7D%24%24"/></div>
+其中![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24R_i%24%24)表示一篇文章所获得的奖励，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24T%24%24)为待分配 FP 总数，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%5Csum%7BV_i%7D%24)是当日所有内容的收益分配权重之和。
 
-其中![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24R_i%24%24)表示一篇文章所获得的奖励，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%24T%24%24)为待分配 FP 总数，![](http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%24%5Csum%7BQ_i%7D%24)是当日所有内容的收益分配权重之和。
+内容收益确定后，将在该内容的作者和投票人中进行再次分配，且该分配比例为作者占75%，投票人占25%。所以作者所获得的奖励为：
 
-内容收益确定后，将在该内容的作者和投票人中进行再次分配，且该分配比例为作者占80%，投票人占20%。所以作者所获得的奖励为：
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20r_%7Bwriter%7D%3D0.75%5Ctimes%20R_i"/></div>
 
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24r_%7Bwriter%7D%3D0.8%5Ctimes%20R_i%24%24"/></div>
+属于投票人的25%的文章或评论所获得的奖励将归点赞者所有，每个点赞者将根据其点赞在该内容点赞权重总和中的占比而获得相应的奖励。所以如果该点赞者j的点赞权重为 ![](http://latex.codecogs.com/svg.latex?W_j)， 则该点赞者j所获的奖励和所有点踩者所获得的奖励分别为：
 
-根据每个投票者的投票权重，占每篇内容投票权重总和的占比，等比分配属于投票人的20%的文章或评论所获得的奖励：
-
-<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B300%7D%20%5Clarge%20%24%24r_%7Bvoter%7D%3D0.2%5Ctimes%20R_i%5Cfrac%7BW_j%7D%7B%5Csum%20W_j%7D%24%24"/></div>
+<div align="center"><img src="http://latex.codecogs.com/svg.latex?%5Cdpi%7B100%7D%20%5Clarge%20%5Cbegin%7Baligned%7D%20r_%7Bliker%7D%26%3D0.25%5Ctimes%20R_i%5Cfrac%7BW_j%7D%7B%5Csum%20W_j%7D%5C%5C%20r_%7Bdisliker%7D%26%3D0%20%5Cend%7Baligned%7D"/></div>
 
 # 运营贡献
 除却内容贡献外，基于运营的贡献也是非常重要的。我们将内容社区应用运营工作中有基础价值的且有群众基础的社区治理贡献和介绍推广贡献，列入奖励范围。每年增发 FTN 中的15%将用来作为这部分的奖励池。
@@ -186,9 +182,11 @@ Fountain 的生态架构，可以分为四层，即链层、行业协议层、�
 
 由于 Fountain 的初衷是利用 Token 奖励来构建有价值的内容社区，进而整体方案设计主要着重于 PoC 机制，为了最快速对 PoC 机制的测试和后续迭代，初期 Fountain 可以基于现有成熟的公链如以太坊或 EOS 进行开发。Fountain 的发展预期分为三个阶段：
 # Alpha阶段
-本阶段的核心目标，是实现包括 Fountain 代币系统、账号系统、内容寻址与获取、基于内容的交互激励在内的核心功能。在本阶段中，我们将建立一套链上地址到内容的寻址系统，并建立起用户信息与交互收益的完整记录系统。同时将与合作方一同建立一套基于链上交互行为的收益核算系统，初步实现 PoC 机制及其它云上配套服务，并进行相关记录与测试，以完善相关社区设定与配置，为未来的拓展做好准备。
+本阶段的核心目标，是实现包括 Fountain 代币系统、账号系统、内容寻址与获取、基于内容的交互激励在内的核心功能。在本阶段中，我们将建立一套链上地址到内容的寻址系统，并建立起用户信息与交互收益的完整记录系统。同时将与合作方一同建立基于齐夫定律的系统，初步实现 PoC 机制及其它云上配套服务，并进行相关记录与测试，以完善相关社区设定与配置，为未来的拓展做好准备。
 
 本阶段完成时，链上与云上的基础服务和经济激励模型将基本完成，可进行初步测试。同时，我们也会开始着手为未来的行业链定制一套完整的公链体系（Fountain 链），在已有公链如以太坊、EOS等的基础上，针对行业特性如海量用户、高频交互等进行定制。
+
+截至至2019年3月，Fountain团队已经初步实现基于齐夫定律的PoC激励机制，完成了社区基础设定与配置，建立了代币系统并通过转换器实现了账号与代币地址之间的互通。在进一步深化社区生态搭建与PoC激励机制的同时，我们将开始建立一套链上地址到内容的寻址系统和用户信息与交互收益的完整记录系统，并开始着手公链体系的定制开发，逐步推进至Beta阶段。
 # Beta阶段
 在 Alpha 阶段的基础上，我们会逐步将上一阶段中在云端完成的工作逐步转移到链上，并在链层增强行业链的联盟功能，为更多社区平台的接入以及整个内容行业的自治做好准备。在协议层我们将进一步完善仲裁系统，实现基于通道的 KYC 服务等；在社区层与应用层我们则会完善介绍人系统以及相关社区治理模型，从而将 Fountain 的既定功能逐步实现并完善。
 
@@ -228,3 +226,4 @@ Fountain 结构化地提出了 PoC+DPoS 的 token 经济解决框架，通过与
 1. [附1：合作伙伴扩展方向](./Appendixes/Appendix-1-Partner-Expansion-Direction-cn.md)
 2. [附2：社区治理草案](./Appendixes/Appendix-2-Community-Governance-cn.md)
 3. [附3：技术方案](./Appendixes/Appendix-3-Technical-Solution-cn.md)
+4. [附4：借贷机制](./Appendixes/Appendix-4-FP-Loan-cn.md)

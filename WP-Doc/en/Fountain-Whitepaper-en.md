@@ -120,7 +120,7 @@ Where ![](http://latex.codecogs.com/svg.latex?FP_i) is the total number of FPs o
 Unlike Steem, the content on Fountain can be always voted. This means that a novel ten years ago can still be voted and rewarded by users today.
 
 ## Content heat
-After calculating the weight of each vote, we can calculate the heat value of the content based on the reader's vote for each content. We believe that whether it got likes or dislikes, it only represents the values of different users, and there is no right or wrong in itself, so it should be regarded as voting.
+After calculating the weight of each vote, we can calculate the heat value of the content based on the reader's vote for each content. likes will increase the content heat, while the dislikes will decrease the content heat.
 
 See content heat value calculation method below:
 

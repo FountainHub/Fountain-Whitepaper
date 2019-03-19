@@ -4,7 +4,7 @@ A can lend his FP to B in two ways:
 - Floating profit loan:
 A and B confirm the loan volume M, loan period N, proportion X%.
 The loan should be completed within the validity period after the comfirmation. Then the M will be used to calcutlate the PoC revenue.
-When calculating the PoC revenue, if the proportion between M and the amount of FP B used to participate in the PoC is T%, X% * T% of the reward B got will be distributed to A. The rest could be kept by B himself.
+When calculating the PoC revenue, if the proportion between M and the amount of FP B used to participate in the PoC is T%, X% * T% of the reward B get will be distributed to A. The rest could be kept by B himself.
 B doesn't have the ownership of M. When maturity date comes, the loan volume M will be automatically transfered to A.
 - Fixed profite loan:
 A and B confirm the loan volume M, loan period N, fixed profit Y.

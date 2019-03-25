@@ -40,7 +40,7 @@ In order to harvest Fountain participants more quickly and efficiently, we chose
 
 "Jianshu" was established in 2013 and has now developed into China's premier creative community. Relying on convenient creative tools and intelligent distribution strategies, we have gathered a large number of high-quality authors and works, which are very popular among young people. The team has received multiple rounds of financing from SIG Heiner Asia, “Junlian” Capital, “Saifu” Investment Fund, “Gobi” Venture Capital and other quality investment institutions.
 
-"Jianshu" has been launched on the web, iOS, Android and other mainstream platforms. With a total registered number of users of more than 12 million, an average of 3 new contents are published every 3 seconds, and the average monthly traffic is 200 million times. Up to now, its main site (http://jianshu.com) has a global Alexa ranking of about 500 and China's ranking of about 60. The R&D team always pays attention to good product design and experience, and is bound to break the current situation of "unrealistic design," " hard to use," "slow starting".
+"Jianshu" has been launched on the web, iOS, Android and other mainstream platforms. With a total registered number of users of more than 15 million, an average of 3 new contents are published every 3 seconds, and the average monthly traffic is 200 million times. Up to now, its main site (http://jianshu.com) has a global Alexa ranking of about 165 and China's ranking of about 39. The R&D team always pays attention to good product design and experience, and is bound to break the current situation of "unrealistic design," " hard to use," "slow starting".
 
 As the “Jianshu” joins the Fountain Ecology, the massive active users of “Jianshu” will become blockchain users, “Jianshu” users will receive the token rewards they deserve, and “Jianshu” will increase the user activity through the incentive of tokens. Moreover, as a founding cooperative application, get the distribution return of the initial token. This is a win-win cooperation.
 
@@ -53,7 +53,7 @@ Comparison of “Jianshu” and Steemit data:
 | Alexa ranking   | **No.500**   | No.1700   | 
 | Mobile App   | **iOS、android**   | N/A   | 
 | Registering   | **Free registering instantly**   | Paid instant registering / queuing for free registering   | 
-| Users   | **12 million**   | 1.1 million   | 
+| Users   | **15 million**   | 1.1 million   | 
 | Active users per day   | **Site 2 million +App 0.5 million**   | Site 0.25 million   | 
 | Main features   | Chinese authoring community with high completion, excellent user experience, stable content traffic, recommendation engine with intelligent algorithm   | The decentralized creation community driven by the blockchain. It has a high-value circulation model, high visibility in overseas markets, and early entry advantages of the blockchain.   | 
 

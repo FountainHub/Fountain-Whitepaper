@@ -50,7 +50,7 @@ Comparison of “Jianshu” and Steemit data:
 |:----|:----:|:----:|
 | Site   | http://jianshu.com   | http://steemit.com   | 
 | Language   | Mainly Chinese   | Mainly English   | 
-| Alexa ranking   | **No.500**   | No.1700   | 
+| Alexa ranking   | **No.165**   | No.5000   | 
 | Mobile App   | **iOS、android**   | N/A   | 
 | Registering   | **Free registering instantly**   | Paid instant registering / queuing for free registering   | 
 | Users   | **15 million**   | 1.1 million   | 

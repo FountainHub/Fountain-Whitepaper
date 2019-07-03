@@ -11,6 +11,9 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
     - [简体中文版本](./WP-Doc/zh-cn/DAO-Creator-Manifesto-cn.md)
 
 ### Changlog
+- V0.98
+  - Add a new concept: Contribution Value
+  - The assigned value of an article will be determined by both Heat Value and Contribution Value
 - V0.97
   - Adjust some parameters according to test feedback
   - Add the loan mechanism
@@ -25,5 +28,3 @@ The Whitepaper of [Fountain project](https://fountainhub.com)
 - V0.93
   - Initial release
 
-## Testing Version
-- Click to [view the changes in the current test environment (on Jianshu)](https://github.com/FountainHub/Fountain-Whitepaper/tree/PoC-Testing)
